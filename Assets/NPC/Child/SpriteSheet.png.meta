@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9262768f31c534a5f98f37e870bcc146
+guid: a6f3cf23faac64d90834933dc4167355
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3600226094467214917
-    second: SpriteSheet 1_0
+      213: 5546671543968653177
+    second: SpriteSheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet 1_0
+      name: SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +128,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb19030217d690ec0800000000000000
-      internalID: -3600226094467214917
+      spriteID: 97fd408b16cb9fc40800000000000000
+      internalID: 5546671543968653177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet 1_1
+      name: SpriteSheet_1
       rect:
         serializedVersion: 2
         x: 16
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c343f0c6ec11b4a93a9e27b34c71bdb2
-      internalID: 1308384097
+      spriteID: e71f6c1ff2d768044a4697ceae65c10a
+      internalID: -38674377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet 1_2
+      name: SpriteSheet_2
       rect:
         serializedVersion: 2
         x: 32
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2c168a1a1b5549d28145b41497ccc7a
-      internalID: -1987980945
+      spriteID: 80cbfcd955ade1a458e415d861d38039
+      internalID: 1638438010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet 1_3
+      name: SpriteSheet_3
       rect:
         serializedVersion: 2
         x: 48
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f0293fbf78a14209895b6be04578814
-      internalID: -1285318153
+      spriteID: 6bcf3b4ddf02d7c4f9b357b3dc57263b
+      internalID: -1763692971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet 1_4
+      name: SpriteSheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3c65149269d74ab7b78165cc30f5cd8
-      internalID: 1445890718
+      spriteID: bbea00de35caa554fbe5bac94c1aa0e9
+      internalID: 525807203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet 1_5
+      name: SpriteSheet_5
       rect:
         serializedVersion: 2
         x: 16
@@ -238,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55be47f9faaf74f8eb6b922d03dd07ee
-      internalID: -1281287480
+      spriteID: ab1b544f3dd7ef440a5cde764f624be9
+      internalID: -308468003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet 1_6
+      name: SpriteSheet_6
       rect:
         serializedVersion: 2
         x: 32
@@ -260,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 990b2d1a465f44448b686176aa7f0316
-      internalID: 1611790267
+      spriteID: 3325b06b7805275459d13ec245824e52
+      internalID: -240963883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet 1_7
+      name: SpriteSheet_7
       rect:
         serializedVersion: 2
         x: 48
@@ -282,8 +282,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daca3bfdcb2bc4a52829323e47699dc5
-      internalID: -1296764125
+      spriteID: 89f66c46b02554e47a51beb9bb407644
+      internalID: -836236597
       vertices: []
       indices: 
       edges: []
@@ -292,7 +292,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1093a76000fa34c009f033d6050c6472
+    spriteID: b8ae5e058f246cc4da14012cd4367a01
     internalID: 0
     vertices: []
     indices: 
@@ -301,19 +301,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries:
-      - key: SpriteEditor.SliceOnImport
-        value: False
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      SpriteSheet 1_0: -3600226094467214917
-      SpriteSheet 1_1: 1308384097
-      SpriteSheet 1_2: -1987980945
-      SpriteSheet 1_3: -1285318153
-      SpriteSheet 1_4: 1445890718
-      SpriteSheet 1_5: -1281287480
-      SpriteSheet 1_6: 1611790267
-      SpriteSheet 1_7: -1296764125
+      SpriteSheet_0: 5546671543968653177
+      SpriteSheet_1: -38674377
+      SpriteSheet_2: 1638438010
+      SpriteSheet_3: -1763692971
+      SpriteSheet_4: 525807203
+      SpriteSheet_5: -308468003
+      SpriteSheet_6: -240963883
+      SpriteSheet_7: -836236597
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

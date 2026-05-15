@@ -28,13 +28,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (PauseController.IsGamePaused)
+        {
+            player.linearVelocity = Vector2.zero;
+            animator.SetBool("isWalking", false);
+            return;
+        }
+        
         player.linearVelocity = moveInput * moveSpeed;
+        animator.SetBool("isWalking", player.linearVelocity.magnitude > 0);
     }
 
     public void Move(InputAction.CallbackContext context)
-    {
-        animator.SetBool("isWalking", true);
-        
+    {        
         if(context.canceled)
         {
             animator.SetBool("isWalking", false);
