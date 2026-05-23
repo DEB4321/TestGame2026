@@ -7,7 +7,9 @@ public class TabController : MonoBehaviour
     public Image[] tabImages;
     public GameObject[] pages;
     private int currentPage = 0;
-    
+    private bool tabSelected = false;
+    private bool tabsOpen = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +30,7 @@ public class TabController : MonoBehaviour
 
     public void ChangeTabRight(InputAction.CallbackContext context)
     {
-        if (context.started == true)
+        if (context.started && !tabSelected && tabsOpen)
         {
             currentPage++;
 
@@ -43,7 +45,7 @@ public class TabController : MonoBehaviour
 
     public void ChangeTabLeft(InputAction.CallbackContext context)
     {
-        if (context.started == true)
+        if (context.started && !tabSelected && tabsOpen)
         {
             currentPage--;
 
@@ -54,5 +56,31 @@ public class TabController : MonoBehaviour
 
             ActivateTab(currentPage);
         }
+    }
+
+    public void SelectTab(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            tabSelected = true;
+        }
+    }
+
+    public void ExitTab(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            tabSelected = false;
+        }
+    }
+
+    public void ExitTab()
+    {
+        tabSelected = false;
+    }
+
+    public void TabsControl(bool status)
+    {
+        tabsOpen = status;
     }
 }

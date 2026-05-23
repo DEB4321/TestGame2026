@@ -34,7 +34,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MenuTabLeft",
+                    "name": "MenuLeft",
                     "type": "Button",
                     "id": "68be54d5-ca0d-436a-8e1d-510066656b41",
                     "expectedControlType": "",
@@ -43,9 +43,45 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MenuTabRight",
+                    "name": "MenuRight",
                     "type": "Button",
                     "id": "116cbb2a-918d-48f4-b35c-d962b4bf7cd6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MenuSelect",
+                    "type": "Button",
+                    "id": "f3d53343-dcba-4178-ad7e-9d5102202f13",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MenuDown",
+                    "type": "Button",
+                    "id": "c135c803-8af3-44aa-b67d-16a461467744",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MenuUp",
+                    "type": "Button",
+                    "id": "ffaffc8c-57c7-4960-b93d-ff676ee7ca27",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MenuBack",
+                    "type": "Button",
+                    "id": "a24e2a35-438d-4656-805c-165f1884eda3",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -214,7 +250,7 @@
                     "interactions": "SlowTap(duration=1,pressPoint=1)",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "MenuTabLeft",
+                    "action": "MenuLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -225,7 +261,51 @@
                     "interactions": "SlowTap(duration=1,pressPoint=1)",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "MenuTabRight",
+                    "action": "MenuRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "286103ba-82af-4009-a3b1-7a095b39ca62",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "MenuSelect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "579acf3e-59f4-4214-9fed-2e561d4df4eb",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "de45af56-7752-4799-9cac-35d89e654825",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da249fdc-fa5f-443e-b6c5-fbb6ef5539ed",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "MenuBack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -48,9 +48,12 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("LastInputY", moveInput.y);
         }
 
-        moveInput = context.ReadValue<Vector2>();
-        animator.SetFloat("InputX", moveInput.x);
-        animator.SetFloat("InputY", moveInput.y);
+        if (!PauseController.IsGamePaused)
+        {
+            moveInput = context.ReadValue<Vector2>();
+            animator.SetFloat("InputX", moveInput.x);
+            animator.SetFloat("InputY", moveInput.y);
+        }
     }
 
     //void OnTriggerEnter2D(Collider2D collision)
