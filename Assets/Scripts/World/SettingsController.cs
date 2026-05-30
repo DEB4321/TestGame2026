@@ -24,35 +24,35 @@ public class SettingsController : MonoBehaviour
         }
     }
 
-    public void Enter(InputAction.CallbackContext context)
+    public void Enter()
     {
-        if (context.started == true && entered == false)
+        if (entered == false)
         {
             entered = true;
 
             ActiveSetting(0);
         }
-        else if (context.started == true && settings[currentSetting].isSelected == false)
+        else if (settings[currentSetting].isSelected == false)
         {
             settings[currentSetting].Enter();
         }
     }
 
-    public void Exit(InputAction.CallbackContext context)
+    public void Exit()
     {
-        if (context.started == true && entered == true && settings[currentSetting].isSelected == false)
+        if (entered == true && settings[currentSetting].isSelected == false)
         {
             entered = false;
 
             settings[currentSetting].settingImage.color = Color.grey;
         }
-        else if (context.started == true && settings[currentSetting].isSelected == true)
+        else if (settings[currentSetting].isSelected == true)
         {
             settings[currentSetting].Exit();
         }
     }
 
-    public void Exit()
+    public void FullExit()
     {
         entered = false;
 

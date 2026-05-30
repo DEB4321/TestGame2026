@@ -6,7 +6,7 @@ public class TabController : MonoBehaviour
 {
     public Image[] tabImages;
     public GameObject[] pages;
-    private int currentPage = 0;
+    public int currentPage = 0;
     private bool tabSelected = false;
     private bool tabsOpen = false;
 

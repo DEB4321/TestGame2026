@@ -8828,7 +8828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &232693147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10321,10 +10321,10 @@ RectTransform:
   - {fileID: 124730810}
   m_Father: {fileID: 670512509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 272.5, y: -225}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802097661
 MonoBehaviour:
@@ -10908,6 +10908,7 @@ MonoBehaviour:
   - {fileID: 120000298}
   - {fileID: 1193279985}
   - {fileID: 232693146}
+  currentPage: 0
 --- !u!1 &1013368478
 GameObject:
   m_ObjectHideFlags: 0
@@ -11165,6 +11166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   menuCanvas: {fileID: 1904219355}
   settings: {fileID: 232693150}
+  inventory: {fileID: 1863342536}
   tabs: {fileID: 1005452722}
 --- !u!1 &1151753641
 GameObject:
@@ -11223,7 +11225,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 526.6666, y: 99.99999}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 20, y: 20}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1193279985
@@ -11243,7 +11245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1193279986
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11334,10 +11336,10 @@ RectTransform:
   - {fileID: 352091188}
   m_Father: {fileID: 2110453393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 482.38406, y: -62.5}
+  m_SizeDelta: {x: 400, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294771349
 MonoBehaviour:
@@ -11819,10 +11821,10 @@ RectTransform:
   - {fileID: 94049509}
   m_Father: {fileID: 844713502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 482.38406, y: -332.5}
+  m_SizeDelta: {x: 400, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1528002565
 MonoBehaviour:
@@ -12288,10 +12290,10 @@ RectTransform:
   - {fileID: 844713502}
   m_Father: {fileID: 670512509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 272.5, y: -50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1596371237
 MonoBehaviour:
@@ -12926,7 +12928,6 @@ GameObject:
   - component: {fileID: 1863342532}
   - component: {fileID: 1863342534}
   - component: {fileID: 1863342536}
-  - component: {fileID: 1863342535}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -12977,30 +12978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c922b9a8d1ad87248b963d630455a174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &1863342535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863342531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 0}
-  m_Constraint: 0
-  m_ConstraintCount: 2
 --- !u!114 &1863342536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13017,7 +12994,10 @@ MonoBehaviour:
   noItems: {fileID: 1435914869}
   items:
   - {fileID: 11400000, guid: 39c5f95ffc5e271468c16b2340c743ef, type: 2}
+  - {fileID: 11400000, guid: c606c5fa2d2fd4511a4cd4959acc5d2f, type: 2}
+  - {fileID: 11400000, guid: 7ca10c657d0004c10a5cb58c2592c19f, type: 2}
   itemPrefab: {fileID: 3565178483132047396, guid: 6eeec540a0f3c5448a2d9cbf85d70193, type: 3}
+  itemPrefabs: []
 --- !u!1 &1875567013
 GameObject:
   m_ObjectHideFlags: 0
@@ -13051,10 +13031,10 @@ RectTransform:
   - {fileID: 802768702}
   m_Father: {fileID: 844713502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 482.38406, y: -62.5}
+  m_SizeDelta: {x: 400, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1875567015
 MonoBehaviour:
@@ -13425,10 +13405,10 @@ RectTransform:
   - {fileID: 636421166}
   m_Father: {fileID: 844713502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 482.38406, y: -197.5}
+  m_SizeDelta: {x: 400, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924682172
 MonoBehaviour:
@@ -13764,8 +13744,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 232693150}
-        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+      - m_Target: {fileID: 1075096799}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: Enter
         m_Mode: 0
         m_Arguments:
@@ -13884,8 +13864,8 @@ MonoBehaviour:
     m_ActionName: Player/MenuUp
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 232693150}
-        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+      - m_Target: {fileID: 1075096799}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 0
         m_Arguments:
@@ -14016,10 +13996,10 @@ RectTransform:
   - {fileID: 1853605308}
   m_Father: {fileID: 2110453393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 482.38406, y: -197.5}
+  m_SizeDelta: {x: 400, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2001686968
 MonoBehaviour:
