@@ -1,36 +1,36 @@
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class InventoryController : MonoBehaviour
 {
     public GameObject inventoryPanel;
     public GameObject noItems;
-    public Item[] items;
-    public GameObject itemPrefab;
+    public List<Item> items;
     public List<GameObject> itemPrefabs = new List<GameObject>();
+    public GameObject itemPrefab;
     private int itemNo = 0;
     private bool entered = false;
+    private ItemDictionary itemDictionary;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (items.Length > 0)
-        {
-            noItems.SetActive(false);
+        itemDictionary = FindAnyObjectByType<ItemDictionary>();
+        
+        //if (items.Count > 0)
+        //{
+        //    noItems.SetActive(false);
 
-            for (int i = 0; i < items.Length; i++)
-            {
-                GameObject item = Instantiate(itemPrefab, inventoryPanel.transform);
-                item.GetComponentsInChildren<Image>()[1].sprite = items[i].sprite;
-                TextMeshProUGUI[] names = item.GetComponentsInChildren<TextMeshProUGUI>();
-                names[0].text = items[i].Name;
-                names[1].text = items[i].quantity.ToString();
-                itemPrefabs.Add(item);
-            }
-        }
+        //    for (int i = 0; i < items.Count; i++)
+        //    {
+        //        GameObject item = Instantiate(itemPrefab, inventoryPanel.transform);
+        //        ItemToPrefab(item, items[i]);
+        //    }
+        //}
     }
 
     public void Activate(int itemNo)
@@ -74,5 +74,121 @@ public class InventoryController : MonoBehaviour
         TextMeshProUGUI[] texts = itemPrefabs[itemNo].GetComponentsInChildren<TextMeshProUGUI>();
         texts[0].color = textColor;
         texts[1].color = textColor;
+    }
+
+    public void AddItem(Item newItem)
+    {
+        if (items.Count == 0) noItems.SetActive(false);
+
+        foreach(Item compareItem in items)
+        {
+            if(newItem.Name == compareItem.Name)
+            {
+                compareItem.AddItem(newItem.quantity);
+                UpdatePrefabQuantity();
+                return;
+            }
+        }
+
+        items.Add(newItem);
+
+        GameObject item = Instantiate(itemPrefab, inventoryPanel.transform);
+        ItemToPrefab(item, newItem);
+    }
+
+    private void ItemToPrefab(GameObject itemPrefab, Item newItem)
+    {
+        itemPrefab.GetComponentsInChildren<Image>()[1].sprite = newItem.sprite;
+        TextMeshProUGUI[] names = itemPrefab.GetComponentsInChildren<TextMeshProUGUI>();
+        names[0].text = newItem.Name;
+        names[1].text = newItem.quantity.ToString();
+        itemPrefabs.Add(itemPrefab);
+    }
+
+    public void ItemControl(InputAction.CallbackContext context)
+    {
+        if(entered && context.performed)
+        {
+            Vector2 input = context.ReadValue<Vector2>();
+
+            if(input.x > 0 && itemNo+1 < items.Count && itemNo%3 < 2)
+            {
+                itemNo++;
+                Activate(itemNo);
+            }
+
+            if(input.x < 0 && itemNo-1 >= 0 && itemNo % 3 > 0)
+            {
+                itemNo--;
+                Activate(itemNo);
+            }
+
+            if(input.y > 0 && itemNo-3 >= 0)
+            {
+                itemNo -= 3;
+                Activate(itemNo);
+            }
+
+            if(input.y < 0 && itemNo+3 < items.Count)
+            {
+                itemNo += 3;
+                Activate(itemNo);
+            }
+        }
+    }
+
+    public void UseItem()
+    {
+        items[itemNo].Use();
+        UpdatePrefabQuantity();
+
+    }
+
+    private void UpdatePrefabQuantity()
+    {
+        TextMeshProUGUI[] names = itemPrefab.GetComponentsInChildren<TextMeshProUGUI>();
+        names[1].text = items[itemNo].quantity.ToString();
+    }
+    
+    public List<ItemSaveData> GetInventoryItems()
+    {
+        List<ItemSaveData> itemData = new List<ItemSaveData>();
+
+        foreach(Item item in items)
+        {
+            print("saved item");
+            itemData.Add(new ItemSaveData { itemID = item.ID, quantity = item.quantity });
+        }
+
+        return itemData;
+    }
+    
+    public void SetInventoryItems(List<Item> itemsInv)
+    {
+        foreach(Transform child in inventoryPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        items = itemsInv;
+        itemPrefabs = new List<GameObject>();
+
+        //foreach(ItemSaveData data in itemsInv)
+        //{
+        //    print($"{data.itemID}, {data.quantity}");
+        //    print(itemDictionary.GetItem(data.itemID).Name);
+        //    items.Add(itemDictionary.GetItem(data.itemID));
+        //}
+
+        if (items.Count > 0)
+        {
+            noItems.SetActive(false);
+
+            foreach(Item item in itemsInv)
+            {
+                GameObject newItem = Instantiate(itemPrefab, inventoryPanel.transform);
+                ItemToPrefab(newItem, item);
+            }
+        }
     }
 }

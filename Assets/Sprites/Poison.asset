@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17e419a1678584409b7875b916e5b3a, type: 3}
+  m_Name: Poison
+  m_EditorClassIdentifier: Assembly-CSharp::SpriteID
+  ID: 0
+  sprite: {fileID: -997167315, guid: c75a97e6e1394432c9b8f243a7447e1b, type: 3}
