@@ -15,12 +15,6 @@ public class Chest : MonoBehaviour, IInteractable
         inventoryController = FindAnyObjectByType<InventoryController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public bool CanInteract()
     {
         return !isOpened;

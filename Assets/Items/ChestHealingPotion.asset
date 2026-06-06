@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27153a9bd65837149a487637120387c0, type: 3}
-  m_Name: HealingPotion
+  m_Name: ChestHealingPotion
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  ID: 1
+  ID: 0
   sprite: {fileID: -1041762313, guid: c75a97e6e1394432c9b8f243a7447e1b, type: 3}
   Name: Healing Potion
   quantity: 1

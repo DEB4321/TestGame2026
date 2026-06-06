@@ -25,7 +25,7 @@ public class SaveController : MonoBehaviour
         {
             playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position,
             mapBoundary = FindAnyObjectByType<CinemachineConfiner2D>().BoundingShape2D.name,
-            items = inventoryController.items
+            items = inventoryController.GetInventoryItems()
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -40,11 +40,6 @@ public class SaveController : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPosition;
 
             FindAnyObjectByType<CinemachineConfiner2D>().BoundingShape2D = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
-
-            //foreach (ItemSaveData item in saveData.items)
-            //{
-            //    print($"itemID: {item.itemID}, quantity: {item.quantity}");
-            //}
 
             inventoryController.SetInventoryItems(saveData.items);
         } 

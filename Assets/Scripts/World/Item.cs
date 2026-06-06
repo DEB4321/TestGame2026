@@ -13,7 +13,7 @@ public class Item : ScriptableObject
         Weapon,
         Armor
     }
-    [SerializeField] private Type type;
+    [SerializeField] public Type type;
 
     public void AddItem(int amount)
     {
@@ -23,5 +23,13 @@ public class Item : ScriptableObject
     public virtual void Use()
     {
         quantity--;
+    }
+
+    public void Set(Item baseItem)
+    {
+        sprite = baseItem.sprite;
+        Name = baseItem.Name;
+        quantity = baseItem.quantity;
+        type = baseItem.type;
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using TMPro;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
@@ -45,7 +46,7 @@ public class InventoryController : MonoBehaviour
 
     public void Enter()
     {
-        if (!entered)
+        if (!entered && items.Count > 0)
         {
             entered = true;
             Activate(0);
@@ -90,7 +91,9 @@ public class InventoryController : MonoBehaviour
             }
         }
 
-        items.Add(newItem);
+        Item dictItem = itemDictionary.GetItem(newItem.Name);
+        dictItem.quantity = newItem.quantity;
+        items.Add(dictItem);
 
         GameObject item = Instantiate(itemPrefab, inventoryPanel.transform);
         ItemToPrefab(item, newItem);
@@ -137,16 +140,29 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    public void UseItem()
+    public void UseItem(InputAction.CallbackContext context)
     {
-        items[itemNo].Use();
-        UpdatePrefabQuantity();
-
+        if (context.started && entered)
+        {
+            items[itemNo].Use();
+            UpdatePrefabQuantity();
+        }
     }
 
     private void UpdatePrefabQuantity()
     {
-        TextMeshProUGUI[] names = itemPrefab.GetComponentsInChildren<TextMeshProUGUI>();
+        if (items[itemNo].quantity <= 0)
+        {
+            items.RemoveAt(itemNo);
+            Destroy(itemPrefabs[itemNo]);
+            itemPrefabs.RemoveAt(itemNo);
+            if (items.Count <= 0)
+            {
+                noItems.SetActive(true);
+            }
+            return;
+        }
+        TextMeshProUGUI[] names = itemPrefabs[itemNo].GetComponentsInChildren<TextMeshProUGUI>();
         names[1].text = items[itemNo].quantity.ToString();
     }
     
@@ -157,34 +173,34 @@ public class InventoryController : MonoBehaviour
         foreach(Item item in items)
         {
             print("saved item");
-            itemData.Add(new ItemSaveData { itemID = item.ID, quantity = item.quantity });
+            itemData.Add(new ItemSaveData { savedItem = item, quantity = item.quantity });
         }
 
         return itemData;
     }
     
-    public void SetInventoryItems(List<Item> itemsInv)
+    public void SetInventoryItems(List<ItemSaveData> itemsInv)
     {
         foreach(Transform child in inventoryPanel.transform)
         {
             Destroy(child.gameObject);
         }
 
-        items = itemsInv;
-        itemPrefabs = new List<GameObject>();
+        items.Clear();
+        itemPrefabs.Clear();
 
-        //foreach(ItemSaveData data in itemsInv)
-        //{
-        //    print($"{data.itemID}, {data.quantity}");
-        //    print(itemDictionary.GetItem(data.itemID).Name);
-        //    items.Add(itemDictionary.GetItem(data.itemID));
-        //}
+        foreach(ItemSaveData data in itemsInv)
+        {
+            data.savedItem.quantity = data.quantity;
+            items.Add(data.savedItem);
+           
+        }
 
         if (items.Count > 0)
         {
             noItems.SetActive(false);
 
-            foreach(Item item in itemsInv)
+            foreach(Item item in items)
             {
                 GameObject newItem = Instantiate(itemPrefab, inventoryPanel.transform);
                 ItemToPrefab(newItem, item);

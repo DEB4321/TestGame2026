@@ -3,6 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public class ItemSaveData
 {
-    public int itemID;
+    public Item savedItem;
     public int quantity;
 }
