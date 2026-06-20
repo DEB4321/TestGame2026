@@ -102,4 +102,9 @@ public class SettingsController : MonoBehaviour
             ActiveSetting(currentSetting);
         }
     }
+
+    public bool IsASettingSelected()
+    {
+        return settings[currentSetting].isSelected;
+    }
 }

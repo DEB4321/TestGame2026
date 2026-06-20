@@ -66,13 +66,13 @@ public class TabController : MonoBehaviour
         }
     }
 
-    public void ExitTab(InputAction.CallbackContext context)
+    /*public void ExitTab(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             tabSelected = false;
         }
-    }
+    }*/
 
     public void ExitTab()
     {

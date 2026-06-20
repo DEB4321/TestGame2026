@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.Diagnostics;
 using UnityEngine.InputSystem;
 
 public class MenuController : MonoBehaviour
 {
     public GameObject menuCanvas;
-    public SettingsController settings;
+    public PartyController party;
     public InventoryController inventory;
+    public SettingsController settings;
     public TabController tabs;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,6 +25,7 @@ public class MenuController : MonoBehaviour
 
         menuCanvas.SetActive(!menuCanvas.activeSelf);
         PauseController.SetPause(menuCanvas.activeSelf);
+        party.Exit();
         settings.FullExit();
         tabs.ExitTab();
         tabs.TabsControl(menuCanvas.activeSelf);
@@ -35,6 +38,7 @@ public class MenuController : MonoBehaviour
             switch (tabs.currentPage)
             {
                 case 0:
+                    party.Enter();
                     break;
                 case 1:
                     inventory.Enter();
@@ -55,6 +59,11 @@ public class MenuController : MonoBehaviour
             switch (tabs.currentPage)
             {
                 case 0:
+                    if (!party.characterSelected) {
+                        tabs.ExitTab();
+                    }
+
+                    party.Exit();
                     break;
                 case 1:
                     inventory.Exit();
@@ -63,6 +72,11 @@ public class MenuController : MonoBehaviour
                     break;
                 case 3:
                     settings.Exit();
+
+                    if (settings.IsASettingSelected())
+                    {
+                        tabs.ExitTab();
+                    }
                     break;
             }
         }

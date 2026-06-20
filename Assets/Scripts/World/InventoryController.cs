@@ -114,25 +114,29 @@ public class InventoryController : MonoBehaviour
         {
             Vector2 input = context.ReadValue<Vector2>();
 
-            if(input.x > 0 && itemNo+1 < items.Count && itemNo%3 < 2)
+            //Item right
+            if (input.x > 0 && itemNo + 1 < items.Count && itemNo % 3 < 2)
             {
                 itemNo++;
                 Activate(itemNo);
             }
 
-            if(input.x < 0 && itemNo-1 >= 0 && itemNo % 3 > 0)
+            //Item left
+            if (input.x < 0 && itemNo - 1 >= 0 && itemNo % 3 > 0)
             {
                 itemNo--;
                 Activate(itemNo);
             }
-
-            if(input.y > 0 && itemNo-3 >= 0)
+            
+            //Item up
+            if (input.y > 0 && itemNo - 3 >= 0)
             {
                 itemNo -= 3;
                 Activate(itemNo);
             }
 
-            if(input.y < 0 && itemNo+3 < items.Count)
+            //Item down
+            if (input.y < 0 && itemNo + 3 < items.Count)
             {
                 itemNo += 3;
                 Activate(itemNo);

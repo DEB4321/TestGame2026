@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f48031a04cf0b4ed6b27b40cb9754c44, type: 3}
-  m_Name: SideCharacter3
+  m_Name: BlankCharacter
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  sprite: {fileID: 5546671543968653177, guid: 9b9e64ac571f84db79804f05c2c2ef0a, type: 3}
-  Name: Ilarian
-  hpStat: 20
-  strengthStat: 80
-  defenseStat: 30
-  magicStat: 60
-  magicDefenseStat: 10
-  speedStat: 100
+  sprite: {fileID: 7482667652216324306, guid: e8bd42a747e57432b82bb9a01b89276e, type: 3}
+  Name: Blank
+  hpStat: 0
+  strengthStat: 0
+  defenseStat: 0
+  magicStat: 0
+  magicDefenseStat: 0
+  speedStat: 0

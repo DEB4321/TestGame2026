@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48031a04cf0b4ed6b27b40cb9754c44, type: 3}
   m_Name: SideCharacter2
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  sprite: {fileID: 0}
-  Name: 
-  hpStat: 0
-  strengthStat: 0
-  defenseStat: 0
-  magicStat: 0
-  magicDefenseStat: 0
-  speedStat: 0
+  sprite: {fileID: 5546671543968653177, guid: ff3d97a36c54741eaae43e7489e77373, type: 3}
+  Name: Uno
+  hpStat: 30
+  strengthStat: 40
+  defenseStat: 50
+  magicStat: 60
+  magicDefenseStat: 70
+  speedStat: 1

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class CharacterUI : MonoBehaviour
 {
     public Character character;
+    public CharacterSettingsUI settingsUI;
+    public int currentSetting;
     private Image image;
     private TextMeshProUGUI Name;
     private TextMeshProUGUI HPStat;
@@ -63,9 +65,39 @@ public class CharacterUI : MonoBehaviour
         UpdateUI(newCharacter);
     }
 
+    public void LeaveParty(Character blankCharater)
+    {
+        character = blankCharater;
+        UpdateUI(blankCharater);
+    }
+
     public void LeaveParty()
     {
         character = null;
-        gameObject.SetActive(false);
+    }
+
+    public void SettingUp()
+    {
+        settingsUI.SettingUp();
+    }
+
+    public void SettingDown()
+    {
+        settingsUI.SettingDown();
+    }
+
+    public void Select()
+    {
+        settingsUI.Select();
+    }
+
+    public void Unselect()
+    {
+        settingsUI.Unselect();
+    }
+
+    public int ActivateCharacterSetting()
+    {
+        return settingsUI.currentUISetting;
     }
 }
