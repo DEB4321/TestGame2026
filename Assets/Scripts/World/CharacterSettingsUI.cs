@@ -70,24 +70,4 @@ public class CharacterSettingsUI : MonoBehaviour
 
         settings[currentUISetting].color = Color.white;
     }
-
-    private void OpenEquipment()
-    {
-        print("No Equipment Yet!");
-    }
-
-    private void OpenSkills()
-    {
-        print("No Skills Yet!");
-    }
-
-    private void OpenAbility()
-    {
-        print("No Ability Yet!");
-    }
-
-    private void LeaveParty()
-    {
-        
-    }
 }
