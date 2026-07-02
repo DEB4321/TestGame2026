@@ -8,11 +8,14 @@ public class CharacterUI : MonoBehaviour
     public Character character;
     public CharacterSettingsUI settingsUI;
     public int currentSetting;
+    public GameObject noCharacter;
+
     private Image image;
     private TextMeshProUGUI Name;
     private TextMeshProUGUI HPStat;
     private TextMeshProUGUI MPStat;
     private TextMeshProUGUI strengthStat;
+    private TextMeshProUGUI magicStat;
     private TextMeshProUGUI defenseStat;
     private TextMeshProUGUI magicDefenseStat;
     private TextMeshProUGUI speedStat;
@@ -28,9 +31,10 @@ public class CharacterUI : MonoBehaviour
         HPStat = text[7];
         MPStat = text[8];
         strengthStat = text[9];
-        defenseStat = text[10];
-        magicDefenseStat = text[11];
-        speedStat = text[12];
+        magicStat = text[10];
+        defenseStat = text[11];
+        magicDefenseStat = text[12];
+        speedStat = text[13];
 
         if (character != null)
         {
@@ -47,8 +51,9 @@ public class CharacterUI : MonoBehaviour
         image.sprite = newCharacter.sprite;
         Name.text = newCharacter.Name;
         HPStat.text = $"{newCharacter.currentHP}/{newCharacter.hpStat}";
-        MPStat.text = $"{newCharacter.currentMP}/{newCharacter.MPStat}";
+        MPStat.text = $"{newCharacter.currentMP}/{newCharacter.mpStat}";
         strengthStat.text = newCharacter.strengthStat.ToString();
+        magicStat.text = newCharacter.magicStat.ToString();
         defenseStat.text = newCharacter.defenseStat.ToString();
         magicDefenseStat.text = newCharacter.magicDefenseStat.ToString();
         speedStat.text = newCharacter.speedStat.ToString();
@@ -59,16 +64,29 @@ public class CharacterUI : MonoBehaviour
         }
     }
 
+    public void ChangePrefabColor(Color imageColor)
+    {
+        if(noCharacter.activeSelf)
+        {
+            noCharacter.GetComponent<Image>().color = imageColor;
+        } else
+        {
+            gameObject.GetComponent<Image>().color = imageColor;
+        }
+    }
+
     public void JoinParty(Character newCharacter)
     {
         character = newCharacter;
         UpdateUI(newCharacter);
+        noCharacter.SetActive(false);
     }
 
     public void LeaveParty(Character blankCharater)
     {
         character = blankCharater;
         UpdateUI(blankCharater);
+        noCharacter.SetActive(true);
     }
 
     public void LeaveParty()
@@ -88,16 +106,35 @@ public class CharacterUI : MonoBehaviour
 
     public void Select()
     {
-        settingsUI.Select();
+        if(noCharacter.activeSelf)
+        {
+
+        }
+        else
+        {
+            settingsUI.Select();
+        }
     }
 
     public void Unselect()
     {
-        settingsUI.Unselect();
+        if(noCharacter.activeSelf)
+        {
+
+        } 
+        else
+        {
+            settingsUI.Unselect();
+        }
     }
 
     public int ActivateCharacterSetting()
     {
         return settingsUI.currentUISetting;
+    }
+
+    public bool NoCharacterSelected()
+    {
+        return noCharacter.activeSelf;
     }
 }

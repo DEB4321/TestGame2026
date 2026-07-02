@@ -8,10 +8,10 @@ public class Character : ScriptableObject
     public int currentHP;
     public int hpStat;
     public int currentMP;
-    public int MPStat;
+    public int mpStat;
     public int strengthStat;
+    public int magicStat;
     public int defenseStat;
-    
     public int magicDefenseStat;
     public int speedStat;
 
@@ -20,8 +20,31 @@ public class Character : ScriptableObject
 
     }
 
-    public void TakeDamage(int damage)
+    public void LoseHP(int loss)
     {
-        currentHP -= damage;
+        currentHP -= loss;
+        
+        if(currentHP <= 0) currentHP = 0;
+    }
+
+    public void GainHP(int gain)
+    {       
+        currentHP += gain;
+
+        if(currentHP >= hpStat) currentHP = hpStat;
+    }
+
+    public void LoseMP(int loss)
+    {
+        currentMP -= loss;
+
+        if (currentMP <= 0) currentMP = 0;
+    }
+
+    public void GainMP(int gain)
+    {
+        currentMP += gain;
+
+        if (currentMP >= mpStat) currentMP = mpStat;
     }
 }

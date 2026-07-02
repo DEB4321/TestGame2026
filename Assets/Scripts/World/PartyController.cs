@@ -12,10 +12,11 @@ public class PartyController : MonoBehaviour
     private int currentCharacter;
     private bool entered;
     public bool characterSelected;
+    private int maxPartySize = 4;
 
     public void Activate(int charNo)
     {
-        for (int i = 0; i < characters.Length; i++)
+        for (int i = 0; i <= characters.Length && i < maxPartySize; i++)
         {
             ChangePrefabColor(i, Color.gray);
         }
@@ -85,8 +86,10 @@ public class PartyController : MonoBehaviour
         if (partySize == currentCharacter)
         {
             currentCharacter--;
-            Activate(currentCharacter - 1);
-            
+            Activate(currentCharacter);
+        } else
+        {
+            Activate(currentCharacter);
         }
     }
 
@@ -119,8 +122,7 @@ public class PartyController : MonoBehaviour
 
     public void ChangePrefabColor(int charNo, Color imageColor)
     {
-        Image image = characters[charNo].GetComponent<Image>();
-        image.color = imageColor;
+        characters[charNo].ChangePrefabColor(imageColor);
     }
 
     public void CharacterMenuMovement(InputAction.CallbackContext context)
@@ -133,17 +135,30 @@ public class PartyController : MonoBehaviour
             {
                 if (input.y > 0)
                 {
-                    characters[currentCharacter].SettingUp();
+                    if(characters[currentCharacter].NoCharacterSelected())
+                    {
+
+                    } else
+                    {
+                        characters[currentCharacter].SettingUp();
+                    }
                 }
 
                 if (input.y < 0)
                 {
-                    characters[currentCharacter].SettingDown();
+                    if(characters[currentCharacter].NoCharacterSelected())
+                    {
+
+                    }
+                    else
+                    {
+                        characters[currentCharacter].SettingDown();
+                    }
                 }
             }
             else if (entered)
             {
-                if (input.x > 0 && currentCharacter + 1 < partySize)
+                if (input.x > 0 && currentCharacter + 1 <= partySize && currentCharacter + 1 < maxPartySize)
                 {
                     currentCharacter++;
                     Activate(currentCharacter);
