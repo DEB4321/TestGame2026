@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   sprite: {fileID: 5546671543968653177, guid: 9b9e64ac571f84db79804f05c2c2ef0a, type: 3}
   Name: Ilarian
-  hpStat: 20
+  currentHP: 200
+  hpStat: 200
+  currentMP: 5
+  MPStat: 5
   strengthStat: 80
   defenseStat: 30
-  magicStat: 60
   magicDefenseStat: 10
   speedStat: 100

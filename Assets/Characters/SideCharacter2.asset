@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   sprite: {fileID: 5546671543968653177, guid: ff3d97a36c54741eaae43e7489e77373, type: 3}
   Name: Uno
+  currentHP: 30
   hpStat: 30
+  currentMP: 50
+  MPStat: 50
   strengthStat: 40
   defenseStat: 50
-  magicStat: 60
   magicDefenseStat: 70
   speedStat: 1

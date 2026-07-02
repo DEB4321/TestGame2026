@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   sprite: {fileID: 4035959289877228764, guid: 9ed9780c5dbf30748bb598e079540b46, type: 3}
   Name: Luminous
+  currentHP: 3
   hpStat: 3
+  currentMP: 20
+  MPStat: 20
   strengthStat: 200
   defenseStat: 10
-  magicStat: 10
   magicDefenseStat: 20
   speedStat: 10

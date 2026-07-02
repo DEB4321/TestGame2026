@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   sprite: {fileID: 5546671543968653177, guid: 4960fcb5d487c425cb3ae738525cefe7, type: 3}
   Name: Zephira
+  currentHP: 20
   hpStat: 20
+  currentMP: 100
+  MPStat: 100
   strengthStat: 1
   defenseStat: 20
-  magicStat: 200
   magicDefenseStat: 40
   speedStat: 40
