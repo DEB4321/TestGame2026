@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48031a04cf0b4ed6b27b40cb9754c44, type: 3}
   m_Name: SideCharacter3
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  sprite: {fileID: 5546671543968653177, guid: 9b9e64ac571f84db79804f05c2c2ef0a, type: 3}
+  mainSprite: {fileID: 5546671543968653177, guid: 9b9e64ac571f84db79804f05c2c2ef0a, type: 3}
+  dialogueSprite: {fileID: 8537202452084475187, guid: 6627bb75cde7b487090fe80c85f8d06c, type: 3}
   Name: Ilarian
   currentHP: 200
   hpStat: 200
   currentMP: 5
-  MPStat: 5
+  mpStat: 5
   strengthStat: 80
+  magicStat: 5
   defenseStat: 30
   magicDefenseStat: 10
   speedStat: 100

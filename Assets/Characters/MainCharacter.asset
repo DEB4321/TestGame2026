@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48031a04cf0b4ed6b27b40cb9754c44, type: 3}
   m_Name: MainCharacter
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  sprite: {fileID: 4035959289877228764, guid: 9ed9780c5dbf30748bb598e079540b46, type: 3}
+  mainSprite: {fileID: 4723107735738678597, guid: 6c9c766db44a64f33b5abf692c9b473b, type: 3}
+  dialogueSprite: {fileID: -7527145504033472756, guid: 67efa555ebff144fc85ee89577bf8d22, type: 3}
   Name: Luminous
   currentHP: 3
   hpStat: 3
   currentMP: 20
-  MPStat: 20
+  mpStat: 20
   strengthStat: 200
+  magicStat: 20
   defenseStat: 10
   magicDefenseStat: 20
   speedStat: 10

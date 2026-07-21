@@ -48,7 +48,7 @@ public class CharacterUI : MonoBehaviour
 
     private void UpdateUI(Character newCharacter)
     {
-        image.sprite = newCharacter.sprite;
+        image.sprite = newCharacter.mainSprite;
         Name.text = newCharacter.Name;
         HPStat.text = $"{newCharacter.currentHP}/{newCharacter.hpStat}";
         MPStat.text = $"{newCharacter.currentMP}/{newCharacter.mpStat}";

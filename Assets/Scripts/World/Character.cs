@@ -3,7 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewCharacter", menuName = "Character")]
 public class Character : ScriptableObject
 {
-    public Sprite sprite;
+    public Sprite mainSprite;
+    public Sprite dialogueSprite;
     public string Name;
     public int currentHP;
     public int hpStat;

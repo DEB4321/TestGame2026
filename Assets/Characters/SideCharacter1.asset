@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48031a04cf0b4ed6b27b40cb9754c44, type: 3}
   m_Name: SideCharacter1
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  sprite: {fileID: 5546671543968653177, guid: 4960fcb5d487c425cb3ae738525cefe7, type: 3}
+  mainSprite: {fileID: 5546671543968653177, guid: 4960fcb5d487c425cb3ae738525cefe7, type: 3}
+  dialogueSprite: {fileID: -7527145504033472756, guid: 889592f9f8d87467d8f83b29d6a4f94e, type: 3}
   Name: Zephira
   currentHP: 20
   hpStat: 20
   currentMP: 100
-  MPStat: 100
+  mpStat: 100
   strengthStat: 1
+  magicStat: 100
   defenseStat: 20
   magicDefenseStat: 40
   speedStat: 40
