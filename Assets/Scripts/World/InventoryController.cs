@@ -185,6 +185,12 @@ public class InventoryController : MonoBehaviour
     
     public void SetInventoryItems(List<ItemSaveData> itemsInv)
     {
+        if (itemsInv.Count < 0 || itemsInv == null)
+        {
+            print("No Items to Import");
+            return;
+        }
+
         foreach(Transform child in inventoryPanel.transform)
         {
             Destroy(child.gameObject);
