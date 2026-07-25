@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPC
   - Enemy
+  - SharedBetweenScenes
   layers:
   - Default
   - TransparentFX
