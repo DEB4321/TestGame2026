@@ -16,12 +16,15 @@ public class InventoryController : MonoBehaviour
     private int itemNo = 0;
     private bool entered = false;
     private ItemDictionary itemDictionary;
+    private Inventory inventory;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         itemDictionary = FindAnyObjectByType<ItemDictionary>();
-        
+        inventory = FindAnyObjectByType<Inventory>();
+        inventory.items = items;
+
         //if (items.Count > 0)
         //{
         //    noItems.SetActive(false);

@@ -13,6 +13,13 @@ public class PartyController : MonoBehaviour
     private bool entered;
     public bool characterSelected;
     private int maxPartySize = 4;
+    private Party party;
+
+    private void Start()
+    {
+        party = FindAnyObjectByType<Party>();
+        party.CharacterUIstoCharacters(characters);
+    }
 
     public void Activate(int charNo)
     {
@@ -100,6 +107,7 @@ public class PartyController : MonoBehaviour
         for (int i = 1; i < characters.Length - 1; i++)
         {
             characters[i].JoinParty(holdCharacters[i]);
+            party.currentPartyMembers[i] = holdCharacters[i];
         }
 
         characters[characters.Length-1].LeaveParty(blankCharater);

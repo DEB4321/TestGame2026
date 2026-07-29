@@ -354,6 +354,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 93841240}
+  - component: {fileID: 93841241}
+  - component: {fileID: 93841242}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: SharedBetweenScenes
@@ -376,6 +378,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &93841241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93841239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208a0fb833f9b0342bc13f0f8fc027e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  items: []
+--- !u!114 &93841242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93841239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf0ee2520ca4254698ecd84ca7ce78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroy
 --- !u!1 &94049508
 GameObject:
   m_ObjectHideFlags: 0
@@ -18354,6 +18381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1972179088}
   - component: {fileID: 1972179089}
+  - component: {fileID: 1972179090}
   m_Layer: 0
   m_Name: Party
   m_TagString: SharedBetweenScenes
@@ -18388,8 +18416,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef71658ec1644671917346342a13532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentPartyMembers: []
+  currentPartyMembers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   remainingCharacters: []
+--- !u!114 &1972179090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972179087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf0ee2520ca4254698ecd84ca7ce78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroy
 --- !u!1 &1979115046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7593270508935075246, guid: f1b13b803708640c1956e87fcda7516f, type: 3}
